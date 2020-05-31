@@ -19,7 +19,7 @@ assesmentObj = {
         'mark': tk.Entry(main),
         'grade': tk.Entry(main)
         },
-    'cat3': {
+    'fat': {
         'rowNumber': 5,
         'mark': tk.Entry(main),
         'grade': tk.Entry(main)

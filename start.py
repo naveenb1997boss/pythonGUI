@@ -1,6 +1,7 @@
 # Imports ------------------------------
 import tkinter as tk
 import csv
+from numpyFunctionality import *
 main = tk.Tk()
 
 assesmentObj = {
@@ -69,5 +70,6 @@ def store_in_csv():
 main.title('Calculator')
 entryFieldsInit()
 tk.Button(main, text="Store to CSV", command=store_in_csv).grid(row=100, column=3)
+tk.Button(main, text="Advanced", command=advanced).grid(row=101, column=3)
 main.mainloop()
 

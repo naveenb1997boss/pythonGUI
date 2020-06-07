@@ -51,4 +51,4 @@ def findVariance(markArrayName, windowObj):
 
 def findCorrelation(markArrayName1, markArrayName2, windowObj):
     clearValue(windowObj)
-    windowObj.insert(0, np.correlate(readCsvObject[markArrayName1], readCsvObject[markArrayName2]))
+    windowObj.insert(0, np.correlate(readCsvObject[markArrayName1], readCsvObject[markArrayName2])[0])

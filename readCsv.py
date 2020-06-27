@@ -1,6 +1,7 @@
 import csv
 import numpy as np
 from tkinter import *
+import matplotlib.pyplot as plt 
 
 readCsvObject = {
     'CAT1': [],
@@ -16,7 +17,7 @@ def readFile():
             readCsvObject['CAT1'].append(int(row[2]))
             readCsvObject['CAT2'].append(int(row[3]))
             readCsvObject['FAT'].append(int(row[4]))
-            readCsvObject['grade'].append(row[5])
+            readCsvObject['grade'].append(row[6])
 
     print(readCsvObject)
     print(np.mean(readCsvObject['CAT1']))
@@ -52,3 +53,11 @@ def findVariance(markArrayName, windowObj):
 def findCorrelation(markArrayName1, markArrayName2, windowObj):
     clearValue(windowObj)
     windowObj.insert(0, np.correlate(readCsvObject[markArrayName1], readCsvObject[markArrayName2])[0])
+
+def plotHistogram():
+    plt.hist(readCsvObject['grade'], bins=10, range=(0, 100), color = 'green', 
+        histtype = 'bar', rwidth = 0.8)
+    plt.xlabel('Grades')
+    plt.ylabel('No. of stidents')
+    plt.title('Student Grade histogram')
+    plt.show()

@@ -3,6 +3,7 @@ from readCsv import *
 
 def advanced():
     newWindow = Tk()
+    newWindow.title('Advanced Settings')
 
     OptionList = [
     "CAT1",
@@ -24,7 +25,7 @@ def advanced():
 
 
     resultEntry = Entry(newWindow)
-    resultEntry.grid(row=100,column=0)
+    resultEntry.grid(row=100,column=5)
     Button(newWindow, text="Maximum", command=lambda : findMax(variable.get(), resultEntry)).grid(row=2, column=2)
     Button(newWindow, text="Minimum", command=lambda : findMin(variable.get(), resultEntry)).grid(row=2, column=3)
     Button(newWindow, text="Mean", command=lambda : findMean(variable.get(), resultEntry)).grid(row=3, column=2)
@@ -37,5 +38,6 @@ def advanced():
     Label(newWindow, text="and").grid(row=5, column=3)
     OptionMenu(newWindow, correlationVar2, *OptionList).grid(row=5, column=4)
     Button(newWindow, text="Correlation", command=lambda: findCorrelation(correlationVar1.get(), correlationVar2.get(), resultEntry)).grid(row=5, column=5)
+    Button(newWindow, text="Plot Histogram", command=plotHistogram).grid(row=6, column=3)
 
     newWindow.mainloop()
